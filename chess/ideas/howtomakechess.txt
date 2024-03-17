@@ -1,0 +1,12 @@
+0: get user input for depth
+1: print chess board
+2: get user input for move
+3: generate all moves for white
+4: check user input = generated moves
+5: engine generates all moves for black
+6: engine plays one move
+7: engine generates all moves for white
+8: engine plays on move
+9: engine evalues position
+10: engine does '5' x amount of times (see '0')
+11: engine plays the best first move for black
