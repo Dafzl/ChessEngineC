@@ -1,6 +1,8 @@
 #include <stdio.h>
 // contains functions from other files
+// #include "debug.c"
 #include "functions.h"
+#include "engine.c"
 
 void update_board();
 
@@ -23,15 +25,31 @@ char boardd[64] = {'-', '-', '-', '-', '-', '-', '-', '-',
                    '-', '-', '-', '-', '-', '-', '-', '-',
                    '-', '-', '-', '-', '-', '-', '-', '-'};
 
+char empty[64] = {'-', '-', '-', '-', '-', '-', '-', '-',
+                  '-', '-', '-', '-', '-', '-', '-', '-',
+                  '-', '-', '-', '-', '-', '-', '-', '-',
+                  '-', '-', '-', '-', '-', '-', '-', '-',
+                  '-', '-', '-', '-', '-', '-', '-', '-',
+                  '-', '-', '-', '-', '-', '-', '-', '-',
+                  '-', '-', '-', '-', '-', '-', '-', '-',
+                  '-', '-', '-', '-', '-', '-', '-', '-'};
+
 int main(void)
 {
-    check(board);
-    // do
-    // {
-    //     printboard(board);
-    //     update_board();
-    //     printboard(board);
-    // } while (1);
+    int i = 0;
+    extern int total;
+    // debug(board);
+    do
+    {
+        // printboard(board);
+        // update_board();
+        printboard(board);
+
+        char *engine_board = engine(board, 20, 0);
+        engine_board = board;
+        i++;
+        printf("the total moves thought ahead are %i\n", total);
+    } while (i < 2);
 }
 
 void update_board()
