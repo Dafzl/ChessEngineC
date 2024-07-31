@@ -45,7 +45,7 @@ int main(void)
         // update_board();
         printboard(board);
 
-        char *engine_board = engine(board, 20, 0);
+        char *engine_board = engine(board, 22, 0);
         engine_board = board;
         i++;
         printf("the total moves thought ahead are %i\n", total);
