@@ -1,0 +1,5 @@
+#include "functions/print_board.c"
+#include "functions/user.c"
+#include "functions/move_gen.c"
+#include "functions/eval.c"
+#include "functions/engine.c"
