@@ -3,3 +3,4 @@
 #include "functions/move_gen.c"
 #include "functions/eval.c"
 #include "functions/engine.c"
+#include "functions/finish.c"

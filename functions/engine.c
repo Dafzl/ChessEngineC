@@ -1,12 +1,11 @@
+void engine_move();
 void reset_board(char *board, char *eval_board);
-extern int eval(char *board);
-extern void move_gen(int square, char *board);
 extern int possible_moves[28];
 int piecetomove, top_move;
 
 void engine(char *board)
 {
-    int top_eval = 0, evaluation;
+    int top_eval = 0, evaluation = 0;
     char eval_board[64];
     piecetomove = 65, top_move = 65;
     reset_board(board, eval_board);
@@ -34,7 +33,7 @@ void engine(char *board)
             }
         }
     }
-    printf("move: %i, eval: %i\n", top_move, top_eval);
+    // printf("move: %i, eval: %i\n", top_move, top_eval);
 }
 
 void reset_board(char *board, char *eval_board)
@@ -43,4 +42,12 @@ void reset_board(char *board, char *eval_board)
     {
         eval_board[i] = board[i];
     }
+}
+
+extern char board[64];
+void engine_move()
+{
+    engine(board);
+    board[top_move] = board[piecetomove];
+    board[piecetomove] = '-';
 }

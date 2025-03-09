@@ -50,7 +50,7 @@ choose_move:
     msquare = coordinate_number * 8 + coordinate_letter;
     for (int i = 0; i < 28; i++)
     {
-        printf("%i ", possible_moves[i]);
+        // printf("%i ", possible_moves[i]); /*testing for move gen*/
         if (possible_moves[i] == msquare)
         {
             move_exists = 1;

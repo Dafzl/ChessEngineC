@@ -27,36 +27,15 @@ char testboard[64] = {
 }; /*for testing*/
 int user_color = 1;
 
-// int main()
-// {
-//     int square = 8;
-//     // board[square] = 'q';
-//     move_gen(square);
-//     for (int i = 0; i < 28; i++)
-//     {
-//         printf("%i ", possible_moves[i]);
-//     }
-//     printf("\n");
-// }
-
-
-
 int main()
 {
+    int finished;
     do
     {
         print_board(board);
         move_pieces(board);
-        print_board(board);
-        engine(board);
-
-        // fix not always legal move generation
-        board[top_move] = board[piecetomove];
-        board[piecetomove] = '-';
-    } while (true);
-    
-    // print_board(board);
-    // engine(board);
-    // // move_pieces(board);
-    // print_board(board);
+        engine_move();
+        finished = finish();
+    } while (finished != 0);
+    printf("Game has ended!\n");
 }
